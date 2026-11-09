@@ -517,3 +517,30 @@ h2 em, h1 em { font-style: italic; font-weight: 400; color: var(--gold-dark); }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Festtage auf Mobilgeräten immer sichtbar halten */
+@media (max-width: 700px) {
+  .calendar-section.reveal {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  .calendar-section .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .calendar-section .feast-card {
+    display: block;
+    visibility: visible;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 440px) {
+  .calendar-section .calendar-grid {
+    grid-template-columns: 1fr;
+  }
+}
